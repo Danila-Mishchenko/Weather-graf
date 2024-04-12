@@ -1,15 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Форма для регистрации в суперсекретной системе</h1>
-<p>{{m}}</p>
+<p>{{ m }}</p>
 <div>
     <form class="login_form" method="post">
-                <input type="name" class="form-control" id="name" placeholder="Введите имя" name="name">
         <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
                placeholder="Введите адрес почты" name="email">
         <input type="password" class="form-control" id="password" placeholder="Введите пароль" name="password">
-        <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+        <button type="submit" class="btn btn-primary">Войти</button>
     </form>
 </div>
 

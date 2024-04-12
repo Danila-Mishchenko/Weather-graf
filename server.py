@@ -13,7 +13,7 @@ app = Flask(__name__)
 @app.route('/')
 def f():
     i = 'wr'
-    return render_template('index.html', i=i)
+    return render_template('osnov1.html', i=i)
 
 
 if __name__ == '__main__':
