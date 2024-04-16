@@ -7,4 +7,21 @@
 <div style="position: absolute; top: 10px; right: 200px;">
     <a href="/vvod2">{{ n }}</a>
 </div>
+
+<div style="display: flex; justify-content: flex-end;">
+    <form class="login_form" method="post" style="display: flex; flex-direction: column;">
+        <label for="gorod">Поиск по населенному пункту</label>
+        <input type="email" class="form-control yellow-text" id="gorod" aria-describedby="emailHelp"
+               placeholder="Введите населенный пункт" name="gorod">
+        <button type="submit" name="search1" class="btn btn-primary but">Поиск</button>
+        <br style="margin: 0;"></br>
+        <label for="gorod">Поиск по координатам</label>
+        <input type="email" class="form-control yellow-text" id="dolgota" aria-describedby="emailHelp"
+               placeholder="Введите долготу" name="dolgota">
+        <input type="email" class="form-control yellow-text" id="shirota" aria-describedby="emailHelp"
+               placeholder="Введите широту" name="shirota">
+        <button type="submit" name="search2" class="btn btn-primary but">Поиск</button>
+    </form>
+</div>
+
 {% endblock %}

@@ -14,13 +14,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def f():
-    i = 'ЗАРЕГИСТРИРОВАТЬСЯ'
-    j = 'ВОЙТИ'
-    return render_template('osnov1.html', m=i, n=j)
+    global zar, voyt, akaynt
+    if request.method == 'GET':
+        return render_template('osnov1.html', m=zar, n=voyt)
 
 
 @app.route('/vvod1', methods=['POST', 'GET'])
 def vvod1():
+    global akaynt
     if request.method == 'GET':
         return render_template('registr.html', m='')
     elif request.method == 'POST':
@@ -34,6 +35,8 @@ def vvod1():
                     (request.form['name'], request.form['email'], request.form['password']))
                 con.commit()
                 con.close()
+                akaynt = True
+                nik = i
                 return render_template('osnov2.html', m=i)
             else:
                 return render_template('registr.html', m='Не все ячейки заполнены')
@@ -43,6 +46,7 @@ def vvod1():
 
 @app.route('/vvod2', methods=['POST', 'GET'])
 def vvod2():
+    global akaynt
     if request.method == 'GET':
         return render_template('voyti.html', m='')
     elif request.method == 'POST':
@@ -50,14 +54,27 @@ def vvod2():
         cur = con.cursor()
         result = cur.execute("""SELECT * FROM data WHERE email = ? and password = ?""",
                              (request.form['email'], request.form['password'])).fetchone()
-        b = [i for i in result]
+        b = result
         con.commit()
         con.close()
-        if len(b) != 0:
-            return render_template('osnov2.html', m=b[0])
+        if b == None:
+            return render_template('voyti.html', m='Такого аккаунта не существует')
         else:
-            return render_template('voytu.html', m='Такого аккаунта не существует')
+            akaynt = True
+            nik = b[0]
+            return render_template('osnov2.html', m=b[0])
 
 
+@app.route('/posleregistr', methods=['POST', 'GET'])
+def posleregistr():
+    global nik, voyt
+    if request.method == 'GET':
+        return render_template('osnov2.html', m=nik)
+
+
+zar = 'ЗАРЕГИСТРИРОВАТЬСЯ'
+voyt = 'ВОЙТИ'
+akaynt = False
+nik = ''
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1', debug=True)

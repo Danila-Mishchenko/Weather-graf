@@ -1,0 +1,14 @@
+label {
+        text-align: right;
+    }
+.but {
+    background-color: black;
+    color: yellow;
+}
+.yellow-text {
+    color: yellow;
+    background-color: black;
+}
+input::placeholder {
+        color: yellow;
+    }
