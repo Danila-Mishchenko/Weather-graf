@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="post" action="/posleregistr">
+</form>
+<div class="d-flex" style="width: 300px; height: 40px;">
+    <form class="login_form" method="post" style="display: flex; flex-direction: row">
+        <input class="form-control yellow-text" id="gorod" aria-describedby="emailHelp"
+               placeholder="Введите населенный пункт" name="gorod">
+        <button type="submit" name="search" class="btn btn-primary but" value="1" style="width: 300px;">Поиск</button>
+        <h2>или</h2>
+        <input class="form-control yellow-text" id="dolgota"
+               placeholder="Введите долготу" name="dolgota">
+        <input class="form-control yellow-text" id="shirota"
+               placeholder="Введите широту" name="shirota">
+        <button type="submit" name="search" style="width: 300px;" class="btn btn-primary but" value="2">Поиск</button>
+    </form>
+</div>
+<p>{{ probl }}</p>
+<br></br>
+<div style="display: flex height: 500px;">
+    {% for i in dl %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <div class="container">
+        <div class="border p-3 bg-primary">
+            <div>Населенный пункт: {{city[i]}}</div>
+            <div>Температура: {{temp[i]}}&#176C</div>
+            <div>Ощущается: {{feels_like[i]}}&#176C</div>
+            <div>Направление ветра: {{wind_dir[i]}}</div>
+            <div>Скорость ветра: {{wind_speed[i]}} м/с</div>
+            <div>Давление: {{pressure_mm[i]}} мм.р.с.</div>
+            <div>Влажность: {{humidity[i]}}%</div>
+            <div>Время суток: {{daytime[i]}}</div>
+            <div>Погода: {{condition[i]}}</div>
+        </div>
+    </div>
+    <div>
+        <a href="{{ url_for('podrob', nazv='{{i}}') }}">Подробнее</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
