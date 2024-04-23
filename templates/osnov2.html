@@ -4,6 +4,9 @@
 <form method="post" action="/posleregistr">
 </form>
 <div class="d-flex" style="width: 300px; height: 40px; margin left: auto">
+    <div style="display: flex">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </div>
     <form class="login_form" method="post" style="display: flex; flex-direction: row">
         <input class="form-control yellow-text" id="gorod" aria-describedby="emailHelp"
                placeholder="Введите населенный пункт" name="gorod">
@@ -15,8 +18,5 @@
                placeholder="Введите широту" name="shirota">
         <button type="submit" name="search" style="width: 300px;" class="btn btn-primary" value="2">Поиск</button>
     </form>
-</div>
-<div style="display: flex">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </div>
 {% endblock %}

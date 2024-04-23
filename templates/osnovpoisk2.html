@@ -24,15 +24,35 @@
 
     <div class="container">
         <div class="border p-3 bg-primary">
-            <div>Населенный пункт: {{city[i]}}</div>
-            <div>Температура: {{temp[i]}}&#176C</div>
-            <div>Ощущается: {{feels_like[i]}}&#176C</div>
-            <div>Направление ветра: {{wind_dir[i]}}</div>
-            <div>Скорость ветра: {{wind_speed[i]}} м/с</div>
-            <div>Давление: {{pressure_mm[i]}} мм.р.с.</div>
-            <div>Влажность: {{humidity[i]}}%</div>
-            <div>Время суток: {{daytime[i]}}</div>
-            <div>Погода: {{condition[i]}}</div>
+            <table>
+                <tr>
+                    <td>
+                        <img src={{k[i]}} alt="Photo" style="width: 200px; height: 200px;">
+                    </td>
+                    <td>
+                        <div>|</div>
+                        <div>|</div>
+                        <div>|</div>
+                        <div>|</div>
+                        <div>|</div>
+                        <div>|</div>
+                        <div>|</div>
+                        <div>|</div>
+                        <div>|</div>
+                    </td>
+                    <td>
+                        <div>Населенный пункт: {{city[i]}}</div>
+                        <div>Температура: {{temp[i]}}&#176C</div>
+                        <div>Ощущается: {{feels_like[i]}}&#176C</div>
+                        <div>Направление ветра: {{wind_dir[i]}}</div>
+                        <div>Скорость ветра: {{wind_speed[i]}} м/с</div>
+                        <div>Давление: {{pressure_mm[i]}} мм.р.с.</div>
+                        <div>Влажность: {{humidity[i]}}%</div>
+                        <div>Время суток: {{daytime[i]}}</div>
+                        <div>Погода: {{condition[i]}}</div>
+                    </td>
+                <tr>
+            </table>
         </div>
     </div>
     <div>

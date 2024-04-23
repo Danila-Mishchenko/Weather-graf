@@ -1,36 +1,69 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="flex-container" style="overflow: hidden; display: flex;">
-  <div class="container" style="">
-    <div style="display: inline-block; display: flex width: 200px">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-      <div class="p-3 bg-primary">
-        {% for i in sp1 %}
-          <div>{{ i }}</div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-  <div class="container" style="">
-    <div style="display: inline-block; display: flex width: 200px">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-      <div class="border p-3 bg-primary">
-        {% for i in sp2 %}
-          <div>{{ i }}</div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-  <div class="container" style="">
-    <div style="display: inline-block; display: flex width: 200px">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-      <div class="border p-3 bg-primary">
-        {% for i in sp3 %}
-          <div>{{ i }}</div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-</div>
+<table>
+    <tr>
+        <div class="flex-container" style="overflow: hidden; display: flex;">
+            <td>
+                {% for i in sp1 %}
+                <div>|</div>
+                {% endfor %}
+            </td>
+            <td>
+                <div class="container" style="">
+                    <div style="display: inline-block; display: flex width: 200px">
+                        <link rel="stylesheet"
+                              href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                        <div class="p-3 bg-primary">
+                            {% for i in sp1 %}
+                            <div>{{ i }}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td>
+                {% for i in sp1 %}
+                <div>|</div>
+                {% endfor %}
+            </td>
+            <td>
+                <div class="container" style="">
+                    <div style="дdisplay: inline-block; display: flex width: 200px">
+                        <link rel="stylesheet"
+                              href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                        <div class="border p-3 bg-primary">
+                            {% for i in sp2 %}
+                            <div>{{ i }}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td>
+                {% for i in sp1 %}
+                <div>|</div>
+                {% endfor %}
+            </td>
+            <td>
+                <div class="container" style="">
+                    <div style="display: inline-block; display: flex width: 200px">
+                        <link rel="stylesheet"
+                              href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                        <div class="border p-3 bg-primary">
+                            {% for i in sp3 %}
+                            <div>{{ i }}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </td>
+        <td>
+            {% for i in sp1 %}
+            <div>|</div>
+            {% endfor %}
+        </td>
+    </tr>
+</table>
 {% endblock %}
