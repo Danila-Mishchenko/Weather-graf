@@ -1,14 +1,9 @@
 import sqlite3
 
 from flask import Flask
-from flask import url_for
 from flask import request
-import requests
 from flask import render_template
-from flask import json
 import requests
-import random
-import os
 
 app = Flask(__name__)
 
@@ -45,7 +40,7 @@ def f():  # страница до аккаунта
                     kop = data['response']['GeoObjectCollection']['featureMember'][0]['GeoObject']['metaDataProperty'][
                         'GeocoderMetaData']['Address']['Components'][5]['name']
 
-                access_key = '043f8dde-ac02-4f50-9661-f4941b45341a'  # получаем погоду
+                access_key = 'bc28c362-5261-4176-b5e0-2710e04cb64b'  # получаем погоду
                 params = {
                     'lat': b,  # широта
                     'lon': a  # долгота
@@ -183,7 +178,7 @@ def posleregistr():  # все аналогично как и с функцией
                     kop = data['response']['GeoObjectCollection']['featureMember'][0]['GeoObject']['metaDataProperty'][
                         'GeocoderMetaData']['Address']['Components'][5]['name']
 
-                access_key = '043f8dde-ac02-4f50-9661-f4941b45341a'
+                access_key = 'bc28c362-5261-4176-b5e0-2710e04cb64b'
                 params = {
                     'lat': b,  # широта
                     'lon': a  # долгота
@@ -243,7 +238,7 @@ def podrob(nazv): # подробная информация прогноза п�
     plac = city.split(' ')
     a = plac[0]
     b = plac[1]
-    access_key = '043f8dde-ac02-4f50-9661-f4941b45341a'
+    access_key = 'bc28c362-5261-4176-b5e0-2710e04cb64b'
     params = {
         'lat': b,  # широта
         'lon': a  # долгота
