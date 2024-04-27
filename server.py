@@ -4,6 +4,7 @@ from flask import Flask
 from flask import request
 from flask import render_template
 import requests
+import os
 
 app = Flask(__name__)
 
@@ -344,4 +345,5 @@ napravlenie = {
     "c": 'штиль',
 }
 if __name__ == '__main__':
-    app.run(port=8080, host='127.0.0.1', debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
